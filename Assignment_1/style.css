@@ -1,0 +1,119 @@
+/* Classes for carrying out all the visual effects*/
+.img {
+  width:inherit;
+  border-radius: 4px;
+}
+
+  .header {
+    font-family: 'Satisfy', cursive;
+          background-color: #7B62B3;
+          color:white;
+          display:flex;
+          flex-wrap:wrap;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 15px;
+          padding: 20px;
+     }
+      
+    
+
+  .content{
+    font-family: 'Satisfy', cursive;
+    max-width: 960px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-flow: row;
+     justify-content:space-between;
+    margin:auto;
+  }
+
+.container {  
+  background-color: white;
+  border-style: dotted;
+  border-color: #FFF468;
+  
+  max-width: width 620px; ;
+  margin-bottom: 15px;
+  
+}
+.container_2{
+  background-color : white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  max-width: width 310px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.container_2 img{
+  background-color :#FFF468;
+  width:inherit;
+  display: flex;
+
+}
+
+.container_3{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+  align-items: center;
+  max-width: width 310px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  
+}
+
+
+/* || General setup */
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 10px;
+    background-color: #FFF468;
+  }
+  
+  
+
+/* || typography */
+h1 {
+    font-size: 4rem;
+    
+  }
+
+  h2 {
+    font-size: 3rem;
+    
+  }
+
+  h3{
+    font-size: 2rem;
+  }
+  
+  
+  p, li {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style-type: circle;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+
+  /*@media only screen and (max-width: 1000px) {
+    .content {
+
+      
+    }
+  }*/
+ 
+
+  

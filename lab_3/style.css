@@ -19,12 +19,12 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Dancing Script', sans-serif;
   color: #2a2a2a;
 }
 
 p, input, li {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Dancing Script', sans-serif;
   color: #2a2a2a;
 }
 
