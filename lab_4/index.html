@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <div class="newtitle"><title>Prof A's Demo Page</title></div>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Prof A's Demo Page</div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+          <div class="paragraph1">
+            <p>
+              Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+              Chartreuse seitan bahn mi sselfies, woke ennui venmo craft beer.
+              Air plant tumeric retro DIY iPhone poutine. +1 gastropub
+              chillwave, cronut glossier pork belly tacos poke next level fanny
+              pack vegan jianbing lo-fi.
+            </p>
+          </div>
+          <div class="paragraph2"></div>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+        let name = "Tanishq Kaushik";
+        let n = name.length;
+        let res = name.charAt(2);
+        let x = name.slice(n - 3, n);
+        let y = name.substring(0, 7);
+        let z = name.substring(8, 15);
+        let total = y.length + z.length;
+
+        //Change Header
+        const newtitle = document.querySelector(".header");
+        newtitle.innerHTML = name + "'s Lab 4 " + total;
+
+        //Adding paragraphs
+        const paragraph1 = document.querySelector(".paragraph1");
+        paragraph1.innerHTML =
+          "Hello World" +
+          "<br />" +
+          "<br />" +
+          "My name has " +
+          n +
+          " characters " +
+          "<br />" +
+          "<br />";
+
+        const paragraph2 = document.querySelector(".paragraph2");
+        paragraph2.innerHTML =
+          "The third character of my name is " +
+          res.toUpperCase() +
+          ". The last three characters of my last name are " +
+          x;
+      }
+    </script>
+  </body>
+</html>
