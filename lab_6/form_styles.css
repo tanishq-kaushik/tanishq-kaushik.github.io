@@ -7,15 +7,29 @@ body {
     background: #eee;
   }
 form {
+    margin: 0 auto;
+  width: 400px;
+  
 
 }
 
 label {
-
+    display: inline-block;
+    width: 90px;
+    text-align: right;
 }
 
 input, textarea {
-    
+    /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
 }
 
 ul {
@@ -27,22 +41,21 @@ ul {
 }
 button {
     background-color: #ffc477;
-    -moz-border-radius: 11px;
-    -webkit-border-radius: 11px;
+    -moz-border-radius: 1em;
+   
     border-radius: 11px;
     border: 2px solid #eeb44f;
-    display: inline-block;
     cursor: pointer;
     color: #ffffff;
     font-family: Verdana;
     font-size: 14px;
-    padding-left: 90px;
+    padding-left: 10px;
     text-decoration: none;
     text-shadow: 0px 1px 1px #cc9f52;
   }
 
   h1 {
-    margin: 20px 50px;
+    margin: 0 auto;
     padding: 0 20px;
     min-height: 75px;
     display: flex;
