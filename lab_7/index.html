@@ -19,7 +19,6 @@
       <div class="wrapper">
         <div class="header">Frontend Libraries: Maps Lab</div>
         <div class="content">
-          When your lab is done, this should be replaced with a stylish map.
           
           <div id="mapid" style="width: 600px; height: 400px; position: relative;" 
           class="leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" 
@@ -28,13 +27,22 @@
         <div class="footer">Make some markers work!</div>
       </div>
     </div>
+</div>
 
 
+    <style>
+      /* css to customize Leaflet popup  */
+      .popupCustom .leaflet-popup-tip,
+      .popupCustom .leaflet-popup-content-wrapper {
+          background: black;
+          color: orange;
+      }
+      </style>
 
 
     <script>
 
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+var mymap = L.map('mapid').setView([38.986079, -76.944927], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
   maxZoom: 18,
@@ -45,6 +53,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   tileSize: 512,
   zoomOffset: -1
 }).addTo(mymap);
+
+
+
+// For creating customized popup
+var customPopup = "<b>McKeldin Library</b>";
+var customOptions =
+    {
+    'maxWidth': '400',
+    'width': '200',
+    'className' : 'popupCustom'
+    }
+
+var marker = L.marker([38.986079, -76.944927]).addTo(mymap);
+marker.bindPopup(customPopup,customOptions);
+
 
     </script>
   </body>
