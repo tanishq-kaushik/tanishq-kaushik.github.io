@@ -12,7 +12,27 @@
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
-  </head>
+
+
+
+
+    <script type="text/javascript" src="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"></script>
+    <script type="text/javascript" >
+        function load() {
+            var mydata = JSON.parse(data);
+            alert(mydata.length);
+
+            var div = document.getElementById('data');
+
+            for(var i = 0;i < mydata.length; i++)
+            {
+                div.innerHTML = div.innerHTML + mydata[i].coordinates;
+            }
+        }
+    </script>
+
+
+</head>
 
   <body>
     <div class="container">
@@ -24,8 +44,9 @@
           class="leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" 
           tabindex="0">
          </div>
+         </div>
         <div class="footer">Make some markers work!</div>
-      </div>
+      
     </div>
 </div>
 
@@ -66,7 +87,7 @@ var customOptions =
     }
 
 var marker = L.marker([38.986079, -76.944927]).addTo(mymap);
-marker.bindPopup(customPopup,customOptions);
+marker.bindPopup(customPopup,customOptions).openPopup() ;
 
 
     </script>
