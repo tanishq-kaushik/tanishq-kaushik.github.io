@@ -22,13 +22,47 @@ app.use(express.static('public'));
 
 
 function processDataForFrontEnd(req, res) {
-  const baseURL = ''; // Enter the URL for the data you would like to retrieve here
+  const baseURL = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'; // Enter the URL for the data you would like to retrieve here
 
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
     fetch(baseURL)
       .then((r) => r.json())
+      .then((data) => {
+        // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
+        console.log(data);
+        const clearEmptyData = data.filter((f) => f.geocoded_column_1);
+        const refined = clearEmptyData.map((m) => ({
+          category: m.category,
+          name: m.name,
+        }));
+        return refined; // <- this will pass the data to the next "then" statement when I'm ready.
+      })
+      .then((data) => {
+        return data.reduce((collection, current) => {
+          current.category;
+          if (!collection[current.category]) {
+            collection[current.category] = [];
+          } else {
+            collection[current.category].push(current);
+          }
+          return collection;
+        }, {});
+      })
+      .then((data) => {
+        console.log("new data", data);
+          const reformattedData = Object.entries(data).map((m, i) => {
+            console.log("to see m", m);
+            return {
+              y: m[1].length,
+              name: m[0],
+            };
+          });
+
+          return reformattedData;
+        })
+
       .then((data) => {
         console.log(data);
         res.send({ data: data }); // here's where we return data to the front end
