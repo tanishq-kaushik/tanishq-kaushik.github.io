@@ -4,13 +4,16 @@
 <head>
   <title>Replace Me With Your Lab Page</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Replace Me With Your Lab Page</div>
-      <div class="content"></div>
+      <div class="header">A Cool Donut Chart</div>
+      <div class="content">
+        <div id="chartContainer" style="height: 550px; width: 100%;"></div>
+      </div>
       <div class="footer"></div>
     </div>
   </div>
@@ -27,8 +30,7 @@
 		text: "Percentage Distribution Of Different Categories Of Food Serving Establishments"
 	},
 	legend:{
-		cursor: "pointer",
-		itemclick: explodePie
+		cursor: "pointer"
 	},
 	data: [{
 		type: "doughnut",
@@ -41,14 +43,7 @@
 });
 chart.render();
 
- function explodePie (e) {
-	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-	} else {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
-	}
-	e.chart.render();
-        // Here's where your chart code should go.
+ 
       });
   </script>
 </body>
