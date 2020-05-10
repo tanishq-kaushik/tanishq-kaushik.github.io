@@ -11,7 +11,7 @@ import { open } from "sqlite";
 import writeUser from "./libraries/writeuser";
 
 const dbSettings = {
-  filename: "./public/tmp/database.db",
+  filename: "./tmp/database.db",
   driver: sqlite3.Database,
 };
 
